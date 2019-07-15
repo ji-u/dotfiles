@@ -12,7 +12,7 @@
 BASH_THEME=default
 
 # basic functionality
-source ${HOME}/.bash/functional.bash
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")">/dev/null 2>&1 && pwd)/.bash/functional.bash"
 import config
 import alias
 import plugin
