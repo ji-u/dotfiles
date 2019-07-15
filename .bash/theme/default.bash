@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
+import lib/theme.bash
 
-function prompt_command() {
+prompt_command() {
   PS1="\
-${purple}\u${reset_color} \
-at ${cyan}\h${reset_color} \
-in ${green}\w${reset_color} \
-${green}→${reset_color} "
+$(color::purple)\u$(color::reset)\
+ at $(color::cyan)\h$(color::reset)\
+ in $(color::green)\w$(color::reset)\
+\n\
+$(theme::git-info "|$(color::yellow)" "$(color::reset)|" "$(color::green)✓" "$(color::red)✗")\
+$(color::green)→$(color::reset) "
 }
 
-safe_append_prompt_command prompt_command
+theme::prompt_command prompt_command
