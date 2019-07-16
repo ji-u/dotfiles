@@ -60,9 +60,9 @@ ui::powerline::available()  {
 
 ui::_powerline() {
     if ui::powerline::available; then
-        echo -e $1
+        echo -en "$1"
     else
-        echo $2
+        echo "$2"
     fi
 }
 

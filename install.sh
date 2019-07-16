@@ -2,7 +2,5 @@
 
 cd "$(dirname "$0")"
 cp dotfiles/.bashrc ~
-if [ -e "~/.bash" ]; then
-    rm -rf ~/.bash
-fi
+rm -rf ~/.bash
 cp -r dotfiles/.bash ~
