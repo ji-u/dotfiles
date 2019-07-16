@@ -1,14 +1,20 @@
 #!/usr/bin/env bash
-import lib/theme.bash
 import lib/ui.bash
+import plugin/theme.bash
 
 prompt_command() {
+  local git_info="$(theme::git-info "\
+|\
+$(ui::color::yellow)$(git::branch)$(ui::color::default)\
+$(theme::git-status "$(ui::color::green)✓" "$(ui::color::red)✗")$(ui::color::default)\
+|")"
+
   PS1="\
 $(ui::color::purple)\u$(ui::color::default)\
  at $(ui::color::cyan)\h$(ui::color::default)\
  in $(ui::color::green)\w$(ui::color::default)\
 \n\
-$(theme::git-info "|$(ui::color::yellow)" "$(ui::color::default)|" "$(ui::color::green)✓" "$(ui::color::red)✗")\
+${git_info}\
 $(ui::color::green)→$(ui::color::default) "
 }
 

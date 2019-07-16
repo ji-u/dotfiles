@@ -21,19 +21,22 @@ theme::prompt_command() {
   fi
 }
 
+theme::git-status() {
+    local clean_char=${1:-'✓'}
+    local dirty_char=${2:-'✗'}
+    if git::is-repo; then
+        if [ "$(git::status)" = "clean" ]; then
+            printf "$clean_char"
+        else
+            printf "$dirty_char"
+        fi
+    fi
+}
+
 theme::git-info() {
-    local prefix=${1:-'|'}
-    local suffix=${2:-'|'}
-    local clean_char=${3:-'✓'}
-    local dirty_char=${4:-'✗'}
+    local info=${1:-"|$(git::branch) $(theme::git-status)|"}
 
     if git::is-repo; then
-        local status_char
-        if [ "$(git::status)" = "clean" ]; then
-            status_char="$clean_char"
-        else
-            status_char="$dirty_char"
-        fi
-        printf "${prefix}$(git::ref)${status_char}${suffix}"
+        printf "$info"
     fi
 }
