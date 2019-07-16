@@ -6,6 +6,7 @@
 # @update: July 14, 2019
 #-------------------------------------------------------------------------------
 import lib/git.bash
+import lib/docker.bash
 import lib/ui.bash
 
 # theme
@@ -39,4 +40,12 @@ theme::git-info() {
     if git::is-repo; then
         printf "$info"
     fi
+}
+
+
+theme::docker-info() {
+    local info=${1:-"(λ $(docker::id))"}
+	if docker::is-container; then
+		printf "$info"
+	fi
 }
