@@ -60,9 +60,26 @@ ui::powerline::available()  {
 
 ui::_powerline() {
     if ui::powerline::available; then
-        echo $1
+        echo -e $1
     else
         echo $2
     fi
 }
+
+ui::powerline::pointing-arrow()     { ui::_powerline "\u27a1"  "~";      }
+ui::powerline::arrow-left()         { ui::_powerline "\ue0b2"  "<";      }
+ui::powerline::arrow-right()        { ui::_powerline "\ue0b0"  ">";      }
+ui::powerline::arrow-right-down()   { ui::_powerline "\u2198"  ">";      }
+ui::powerline::arrow-down()         { ui::_powerline "\u2B07"  "_";      }
+ui::powerline::plus-minus()         { ui::_powerline "\ue00b1" "+-";     }
+ui::powerline::branch()             { ui::_powerline "\ue0a0"  "|}";     }
+ui::powerline::refers-to()          { ui::_powerline "\u27a6"  "*";      }
+ui::powerline::ok()                 { ui::_powerline "\u2714"  "+";      }
+ui::powerline::fail()               { ui::_powerline "\u2718"  "x";      }
+ui::powerline::lightning()          { ui::_powerline "\u26a1"  "!";      }
+ui::powerline::cog()                { ui::_powerline "\u2699"  "{*}";    }
+ui::powerline::heart()              { ui::_powerline "\u2764"  "<3";     }
+ui::powerline::star()               { ui::_powerline "\u2b50"  "*";      }
+ui::powerline::saxophone()          { ui::_powerline "\U1F3B7" "(YEAH)"; }
+ui::powerline::thumbs-up()          { ui::_powerline "\U1F44D" "(OK)";   }
 
