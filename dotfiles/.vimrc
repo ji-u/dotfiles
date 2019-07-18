@@ -24,10 +24,12 @@
             Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
         " }
 
-        " Themes {
+        " UI & Themes {
             Plug 'joshdick/onedark.vim', { 'as': 'onedark' }
             Plug 'vim-airline/vim-airline'
             Plug 'vim-airline/vim-airline-themes'
+
+            Plug 'Yggdroot/indentline'
         " }
     " }
 
@@ -48,8 +50,9 @@
             endif
         " }
         " YouCompleteMe {
-            let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
+            let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
             let g:ycm_max_diagnostics_to_display = 0
+            let g:ycm_key_invoke_completion = '<c-n>'
         " }
     " }
 " }
@@ -111,6 +114,10 @@
         set t_Co=256
         set background=dark
         colors onedark
+    " }
+    " Font {
+        set anti enc=utf-8
+        set guifont=Source\ Code\ Pro\ 11
     " }
     " Components {
         set showmode
