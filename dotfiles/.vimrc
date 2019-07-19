@@ -19,11 +19,11 @@
         " C++ support {
             Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': ['c', 'cpp' ]}
         " }
-
         " Files {
             Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+            Plug 'airblade/vim-gitgutter'
+            Plug 'tell-k/vim-autopep8'
         " }
-
         " UI & Themes {
             Plug 'joshdick/onedark.vim', { 'as': 'onedark' }
             Plug 'vim-airline/vim-airline'
@@ -81,6 +81,7 @@
     " Window {
         set splitright
         set splitbelow
+        set shortmess=a
     " }
     " Encoding {
         set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,gbk,euc-kr,utf-bom
@@ -162,5 +163,8 @@
         " Nerdtree {
             nnoremap    <leader>n   :NERDTreeToggle<cr>
         " } 
+        " GItGutter {
+            nnoremap    <leader>g   :GitGutterToggle<cr>
+        " }
     " } 
 " }
