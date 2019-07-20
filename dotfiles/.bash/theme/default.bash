@@ -11,8 +11,11 @@ $(theme::git-status "$(ui::color::green)$(ui::powerline::ok)" "$(ui::color::red)
 
   local docker_id=$(docker::id)
   local docker_info="$(theme::docker-info " λ [${docker_id:0:8}]")"
+  
+  local conda_info="$(theme::conda-info "($(ui::color::green)$(conda::env-name)$(ui::color::default)) ")"
 
   PS1="\
+${conda_info}\
 $(ui::color::purple)\u$(ui::color::default) \
 at $(ui::color::cyan)\h${docker_info}$(ui::color::default) \
 in $(ui::color::green)\w$(ui::color::default)\

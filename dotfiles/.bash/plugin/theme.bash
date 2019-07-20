@@ -3,11 +3,12 @@
 # @author: Yu Ji
 # @email: maple.jiyu@hotmail.com
 # @create: July 13, 2019
-# @update: July 14, 2019
+# @update: July 20, 2019
 #-------------------------------------------------------------------------------
 import lib/git.bash
 import lib/docker.bash
 import lib/ui.bash
+import lib/conda.bash
 
 # theme
 theme::prompt_command() {
@@ -36,16 +37,21 @@ theme::git-status() {
 
 theme::git-info() {
     local info=${1:-"|$(git::branch) $(theme::git-status)|"}
-
     if git::is-repo; then
         printf "$info"
     fi
 }
-
 
 theme::docker-info() {
     local info=${1:-"(λ $(docker::id))"}
 	if docker::is-container; then
 		printf "$info"
 	fi
+}
+
+theme::conda-info() {
+    local info=${1:-"($(conda::env-name))"}
+    if conda::is-env; then
+        printf "$info"
+    fi
 }
