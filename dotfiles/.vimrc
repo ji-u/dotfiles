@@ -145,21 +145,28 @@
 " Key mapping { Leader {
         let mapleader     = " " 
         let g:mapleader   = " "
-    " } Save exit {
-        noremap     <leader>w   :w<cr> 
-        noremap     <leader>q   :bd<cr> 
-        noremap<leader>x   :qa<cr>
+    " } 
+    " Faster esc {
+        inoremap    jk          <esc>
+        inoremap    <esc>       <nop>
+    " }
+    " Save exit {
+        nnoremap     <leader>w   :w<cr> 
+        nnoremap     <leader>q   :bd<cr> 
+        nnoremap<leader>x   :qa<cr>
     " } 
     " Switch window {
-        noremap     <c-h>       <c-w>h 
-        noremap     <c-j>       <c-w>j 
-        noremap     <c-k>       <c-w>k 
-        noremap     <c-l>       <c-w>l 
-        noremap     <tab>       <c-w>w 
-        noremap     <leader>=   <c-w>=
-    " } Search {
-        nmap <silent> <leader>/ :nohlsearch<cr>
-    " } Plugin { 
+        nnoremap     <c-h>       <c-w>h 
+        nnoremap     <c-j>       <c-w>j 
+        nnoremap     <c-k>       <c-w>k 
+        nnoremap     <c-l>       <c-w>l 
+        nnoremap     <tab>       <c-w>w 
+        nnoremap     <leader>=   <c-w>=
+    " } 
+    " Search {
+        nnoremap <silent> <leader>/ :nohlsearch<cr>
+    " } 
+    " Plugin { 
         " Nerdtree {
             nnoremap    <leader>n   :NERDTreeToggle<cr>
         " } 
