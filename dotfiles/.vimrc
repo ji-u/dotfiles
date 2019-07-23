@@ -23,12 +23,13 @@
             Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
             Plug 'airblade/vim-gitgutter'
             Plug 'tell-k/vim-autopep8'
+            Plug 'lervag/vimtex'
+            Plug 'ji-u/vim-markdown-latex'
         " }}}
         " UI & Themes {{{
             Plug 'joshdick/onedark.vim', { 'as': 'onedark' }
             Plug 'vim-airline/vim-airline'
             Plug 'vim-airline/vim-airline-themes'
-
             Plug 'Yggdroot/indentline'
         " }}}
     " }}}
@@ -62,6 +63,10 @@
         syntax on
         filetype plugin indent on
         set showmatch
+        let g:tex_flavor='latex'
+        if has('conceal')
+            set conceallevel=2 concealcursor=i
+        endif
     " }}}
     " Bells {{{
         set noerrorbells
@@ -161,7 +166,7 @@
         nnoremap    <leader>=   <c-w>=
         inoremap    <c-d>       <esc>ddi
         inoremap    <c-u>       <esc>ui
-        nnoremap    <leader>ev  :vsplit $MYVIMRC<cr>
+        nnoremap    <leader>ev  :split $MYVIMRC<cr>
         nnoremap    <leader>sv  :source $MYVIMRC<cr>
     " }}}
     " Switch window {{{
@@ -172,7 +177,6 @@
         nnoremap    <tab>       <c-w>w 
     " }}} 
     " Search {{{
-        nnoremap    <leader>g   :silent execute "grep! -s -n -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>:redr!<cr>
         nnoremap    <leader>/   :nohlsearch<cr>
     " }}} 
     " Plugin {{{ 
@@ -180,7 +184,10 @@
             nnoremap    <leader>n   :NERDTreeToggle<cr>
         " }}} 
         " GitGutter {{{
-            nnoremap    <leader>gt   :GitGutterToggle<cr>
+            nnoremap    <leader>g   :GitGutterToggle<cr>
+        " }}}
+        " MarkdownTex {{{
+            nnoremap    <leader>t   :MarkdownTexToggle<cr>
         " }}}
     " }}} 
 " }}}
