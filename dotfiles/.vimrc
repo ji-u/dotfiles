@@ -17,7 +17,7 @@
 
     " Plugins {{{
         " C++ support {{{
-            Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer', 'for': ['c', 'cpp' ]}
+            Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer', 'for': ['c', 'cpp', 'python' ]}
         " }}}
         " Files {{{
             Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -65,7 +65,7 @@
         set showmatch
         let g:tex_flavor='latex'
         if has('conceal')
-            set conceallevel=2 concealcursor=i
+            set conceallevel=2 
         endif
     " }}}
     " Bells {{{
