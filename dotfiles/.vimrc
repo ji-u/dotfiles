@@ -160,6 +160,7 @@
         vnoremap    <esc>       <nop>
         nnoremap    <leader>q   :quit<cr>
         nnoremap    <leader>w   :write<cr>
+        nnoremap    <leader>wq  :wq<cr>
     " }}} 
     " Editing {{{
         nnoremap    <space>     za
